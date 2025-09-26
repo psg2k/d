@@ -28,10 +28,11 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
 
         # Verify hash
         if hashlib.sha256(json.dumps(matrix).encode()).hexdigest() == hashed:
-            print("Hash OK ✅")
+            print("Hash OK ")
             ssock.sendall(b"yes")
         else:
-            print("Hash mismatch ❌")
+            print("Hash mismatch ")
             ssock.sendall(b"no")
 
     print("Connection closed")
+
